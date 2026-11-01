@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bistro 67</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Bistro 67 is a premium café website concept: a scroll-driven coffee cup animation, editorial menu, short film and responsive layouts.">
+<meta name="theme-color" content="#F2E9DC">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bistro 67 — Premium Café Website Concept">
+<meta property="og:description" content="Scroll to open the cup. A cinematic, photographic café website concept.">
+<meta property="og:image" content="https://icemantiffanyblu.github.io/bistro67-cafe-website/docs/screenshots/og-image.jpg">
+<meta property="og:url" content="https://icemantiffanyblu.github.io/bistro67-cafe-website/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Bodoni+Moda:ital,opsz,wght@1,6..96,400..600&display=swap">
+<link rel="preload" as="image" href="assets/hero/seq/cup_0001.webp">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="top" id="top">
+  <a class="brand" href="#poster" aria-label="Bistro 67, back to top"><b>BISTRO 67</b><span>Coffee / Kitchen<span class="cityTag"></span></span></a>
+  <nav class="bar" aria-label="Main">
+    <a href="#menu">Menu</a>
+    <a class="opt" href="#day">Story</a>
+    <a href="#visit">Visit</a>
+    <button class="order" type="button" data-open-order aria-controls="order" aria-expanded="false">Order<span class="count" aria-live="polite"></span></button>
+  </nav>
+</header>
+
+<main>
+<!-- 01 POSTER → 02 THE POUR -->
+<section class="stage" id="poster" data-bg="cream" aria-label="Bistro 67. Not your usual.">
+  <h1 class="sr">Bistro 67, not your usual</h1>
+  <p class="h-not cond" aria-hidden="true">Not your</p>
+  <img class="bean far" src="assets/hero/bean.webp" alt="" width="383" height="515">
+  <canvas id="seq" role="img" aria-label="A Bistro 67 takeaway cup. As you scroll, the lid lifts and coffee bursts out."></canvas>
+  <p class="h-usual ital" aria-hidden="true">usual.</p>
+  <p class="h-anno mark" aria-hidden="true"><i></i><span>The 67 cup<br>Hot, iced, or a little of both</span></p>
+  <p class="h-note"><b>Coffee first.</b>Kitchen till 10:30. Bring a laptop, a friend, or nothing at all.</p>
+  <p class="h-cue mark" aria-hidden="true">Scroll to open</p>
+  <img class="bean near" src="assets/hero/bean.webp" alt="" width="383" height="515">
+  <div class="flood" aria-hidden="true"></div>
+</section>
+
+<!-- 03 SIGNATURE -->
+<section class="sig pad" id="signature" data-bg="espresso" aria-labelledby="sigT">
+  <p class="mark">01 / Signature</p>
+  <h2 class="sr" id="sigT">The 67, our house cold coffee</h2>
+  <p class="sig-word l cond" aria-hidden="true">The</p>
+  <figure class="sig-photo">
+    <img src="assets/photo/signature-1600.webp" srcset="assets/photo/signature-800.webp 800w, assets/photo/signature-1600.webp 1600w" sizes="(max-width:720px) 84vw, 34vw" alt="An iced coffee with milk swirling through the ice in a tall glass" width="1600" height="2000" loading="lazy" decoding="async">
+  </figure>
+  <p class="sig-word r cond" aria-hidden="true">67</p>
+  <p class="sig-copy">Cold. Thick.<br>Gone before the ice melts.<span class="mark">The 67 cold coffee · ₹249</span></p>
+</section>
+
+<!-- 04 MENU -->
+<section class="menu pad" id="menu" data-bg="cream" aria-labelledby="menuT">
+  <div class="menu-head">
+    <h2 class="cond" id="menuT">Your usual?</h2>
+    <p><span class="mark">02 / Menu</span><br>100% vegetarian. Proposed opening menu; prices in ₹ including GST, to be confirmed before launch. Oat milk +₹40.</p>
+  </div>
+  <div class="spread">
+    <div class="col">
+      <h3><span class="n">01</span>Coffee</h3><ul class="items" data-cat="coffee"></ul>
+      <figure class="photo inset"><img src="assets/photo/latteTop-800.webp" alt="A cappuccino with latte art on a wooden table, seen from above" width="800" height="800" loading="lazy" decoding="async"></figure>
+    </div>
+    <figure class="photo main"><img src="assets/photo/spread-1600.webp" srcset="assets/photo/spread-800.webp 800w, assets/photo/spread-1600.webp 1600w" sizes="(max-width:900px) 92vw, 36vw" alt="Cappuccinos and croissants on a dark wooden table, from above" width="1600" height="2000" loading="lazy" decoding="async"></figure>
+    <div class="col right"><h3><span class="n">02</span>House</h3><ul class="items" data-cat="house"></ul></div>
+  </div>
+  <div class="more">
+    <button id="moreBtn" type="button" aria-expanded="false" aria-controls="full">Full menu</button>
+    <button class="textbtn" type="button" data-open-order>Build an order list</button>
+  </div>
+  <div class="full" id="full" hidden></div>
+</section>
+
+<!-- 05 MADE HERE -->
+<section class="made" id="made" data-bg="espresso" aria-label="Made here, every day">
+  <div class="made-pin">
+    <img class="poster" src="assets/film/made-here.jpg" alt="" width="1600" height="900">
+    <video id="film" muted loop playsinline preload="none" poster="assets/film/made-here.jpg" aria-label="Short film: coffee beans, espresso pouring, milk, flour, dough, a slow pour and milk into iced coffee">
+      <source src="assets/film/made-here.mp4" type="video/mp4">
+    </video>
+    <div class="made-shade" aria-hidden="true"></div>
+    <h2 class="made-line one cond">Made here.</h2>
+    <p class="made-line two cond" aria-hidden="true">Every day.</p>
+    <p class="mark">03 / Made here</p>
+  </div>
+</section>
+
+<!-- 06 A DAY AT 67 -->
+<section class="day pad" id="day" data-bg="cream" aria-labelledby="dayT">
+  <div class="day-head"><h2 class="cond" id="dayT">A day at 67</h2><p class="mark" style="margin:0">04 / Story</p></div>
+  <article class="moment m1">
+    <div class="txt"><p class="time cond">8:07<sup>AM</sup></p><p class="say">First espresso. Shutters half up.</p></div>
+    <figure class="photo"><img src="assets/photo/espresso-1600.webp" srcset="assets/photo/espresso-800.webp 800w, assets/photo/espresso-1600.webp 1600w" sizes="(max-width:720px) 92vw, 30vw" alt="Espresso pouring from a portafilter in warm light" width="1600" height="2000" loading="lazy" decoding="async"></figure>
+  </article>
+  <article class="moment m2">
+    <figure class="photo"><img src="assets/photo/laptop-1600.webp" srcset="assets/photo/laptop-800.webp 800w, assets/photo/laptop-1600.webp 1600w" sizes="(max-width:720px) 92vw, 56vw" alt="Hands on a laptop beside a latte on a wooden café table" width="1600" height="1067" loading="lazy" decoding="async"></figure>
+    <div class="txt"><p class="time cond">1:42<sup>PM</sup></p><p class="say">Someone's been working from the corner table for three hours.</p></div>
+  </article>
+  <article class="moment m3">
+    <div class="txt"><p class="time cond">6:16<sup>PM</sup></p><p class="say">Three cold coffees. One plate of fries. Nobody checking the time.</p></div>
+    <figure class="photo"><img src="assets/photo/friends-1600.webp" srcset="assets/photo/friends-800.webp 800w, assets/photo/friends-1600.webp 1600w" sizes="(max-width:720px) 100vw, 58vw" alt="Friends talking over drinks at a café table in the evening" width="1600" height="1067" loading="lazy" decoding="async"></figure>
+  </article>
+  <article class="moment m4">
+    <figure class="photo"><img src="assets/photo/affogato-1600.webp" srcset="assets/photo/affogato-800.webp 800w, assets/photo/affogato-1600.webp 1600w" sizes="(max-width:720px) 70vw, 25vw" alt="Espresso poured over vanilla ice cream in a glass" width="1600" height="2000" loading="lazy" decoding="async"></figure>
+    <div class="txt"><p class="time cond">10:48<sup>PM</sup></p><p class="say">Last affogato.</p></div>
+  </article>
+</section>
+
+<!-- 07 THE CORNER TABLE -->
+<section class="corner pad" id="corner" data-bg="cream" aria-labelledby="cornerT">
+  <div class="corner-grid">
+    <h2 class="cond" id="cornerT">The corner table is taken.</h2>
+    <figure class="photo"><img src="assets/photo/interior-1600.webp" srcset="assets/photo/interior-800.webp 800w, assets/photo/interior-1600.webp 1600w" sizes="(max-width:720px) 100vw, 70vw" alt="A warm café interior in late-afternoon light, with plants and wooden chairs" width="1600" height="1000" loading="lazy" decoding="async"></figure>
+    <figure class="quote">
+      <blockquote class="ital">Quiet enough to work. Loud enough to feel alive.</blockquote>
+      <p>That's the room we're building. Window seats for the early crowd, long tables for the late one.</p>
+    </figure>
+  </div>
+</section>
+
+<!-- 08 VISIT -->
+<section class="visit pad" id="visit" data-bg="cream" aria-labelledby="visitT">
+  <p class="mark" style="margin:0 0 24px">05 / Visit</p>
+  <h2 class="cond" id="visitT">Come for the coffee.<span>Stay for the moment.</span></h2>
+  <div class="visit-grid">
+    <div class="vcol"><span class="mark">Address</span><p id="cAddress"></p><p id="cMaps" style="margin-top:14px"></p></div>
+    <div class="vcol"><span class="mark">Hours</span>
+      <table class="hours"><tbody><tr><td>Mon – Fri</td><td>8:00 – 23:00</td></tr><tr><td>Sat – Sun</td><td>9:00 – 23:30</td></tr><tr><td>Last order</td><td>22:30</td></tr></tbody></table>
+      <p style="margin-top:8px;font-size:.8125rem;opacity:.7">Proposed hours.</p></div>
+    <div class="vcol"><span class="mark">Contact</span><p id="cPhone"></p><p id="cInsta" style="margin-top:8px"></p></div>
+    <figure class="photo"><img src="assets/photo/window-1600.webp" srcset="assets/photo/window-800.webp 800w, assets/photo/window-1600.webp 1600w" sizes="(max-width:720px) 92vw, 22vw" alt="A long café counter by a window looking out onto trees" width="1600" height="2000" loading="lazy" decoding="async"></figure>
+    <p class="vnote">Bistro 67 hasn't announced a location yet. Address, phone and social details appear here once they're confirmed.</p>
+  </div>
+</section>
+</main>
+
+<!-- 09 67 -->
+<footer class="end pad" id="end" data-bg="espresso">
+  <div class="end-row">
+    <p class="mark" style="margin:0">Bistro 67 · Coffee / Kitchen<span class="cityTag"></span></p>
+    <ul class="end-links mark"><li><a href="#menu">Menu</a></li><li><a href="#day">Story</a></li><li><a href="#visit">Visit</a></li><li><button type="button" data-open-order>Order list</button></li></ul>
+    <p class="end-demo">Bistro 67 is a concept café created as a website demonstration. The menu, prices, opening hours and ordering list are examples, not a real business.</p>
+  </div>
+  <p class="final67 cond" aria-hidden="true">67</p>
+  <div class="end-base mark"><span>© 2026 Bistro 67</span><span>Photography: Unsplash · Film footage: Pexels</span><span>Made slow. Gone fast.</span></div>
+</footer>
+
+<!-- order list (preview; not connected to ordering) -->
+<div class="scrim" id="scrim"></div>
+<aside class="sheet" id="order" role="dialog" aria-modal="true" aria-labelledby="orderT" aria-hidden="true">
+  <div class="sheet-head">
+    <h2 class="cond" id="orderT">Order list</h2>
+    <button class="close" type="button" id="closeOrder">Close</button>
+  </div>
+  <p class="sheet-note"><b>Preview.</b> Online ordering isn't open yet. Build your list here, then copy it and show it at the counter or send it to us once ordering opens. Nothing is sent from this page.</p>
+  <div class="sheet-body" id="orderBody"></div>
+  <div class="sheet-foot">
+    <div class="total"><span>Total</span><span id="orderTotal">₹0</span></div>
+    <div class="sheet-actions"><button class="btn solid" type="button" id="copyOrder">Copy list</button><button class="btn ghost" type="button" id="clearOrder">Clear</button></div>
+    <p class="status" id="orderStatus" role="status"></p>
+    <pre class="sr" id="orderText"></pre>
+  </div>
+</aside>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
